@@ -32,10 +32,8 @@
 long gcd_sub(long u, long v)
 {
 	long t;
-	while(u > 0)
-	{
-		if(u < v)
-		{
+	while (u > 0) {
+		if (u < v) {
 			t = u;
 			u = v;
 			v = t;
@@ -48,14 +46,12 @@ long gcd_sub(long u, long v)
 long gcd_mod(long u, long v)
 {
 	long t, mod = -1;
-	if(u < v)
-	{
+	if (u < v) {
 		t = u;
 		u = v;
 		v = t;
 	}
-	while(mod)
-	{
+	while (mod) {
 		mod = u % v;
 		u = v;
 		v = mod;

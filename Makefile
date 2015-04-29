@@ -22,7 +22,7 @@ all: algorithms
 
 algorithms: build/chap2
 
-build/chap2: $(SOURCEFILES)
+build/chap2: $(SOURCEFILES) $(HEADERFILES)
 	$(CC) $(CFLAGS) $(INCLUDES) -o $@ $^ $(LFLAGS) $(LIBS)
 
 $(EXECUTABLE): $(OBJS)

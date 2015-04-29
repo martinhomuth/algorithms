@@ -1,13 +1,12 @@
-/* main.c --- 
+/* chapter02.h --- 
  * 
- * Filename: main.c
- * Description: This is the central file for the algorithm testing and such.
+ * Filename: chapter02.h
  * Author: Martin Homuth
- * Created: Thu Apr  9 18:42:54 2015 (+0200)
+ * Created: Tue Apr 28 12:41:27 2015 (+0200)
  */
 
 /* Change Log:
- *  2015/04/28 - Restructuring the files to have a cleaner layout
+ * 
  * 
  */
 
@@ -27,10 +26,15 @@
 
 /* Code: */
 
-#include "chapter02/chapter02.h"
-int main()
-{
-	test_chap02();
-}
+void test_chap02(void);
 
-/* main.c ends here */
+int convert(void);
+
+struct fraction {
+	int numerator;
+	int denominator;
+};
+
+struct fraction create_shortened_fraction(int, int);	
+
+/* chapter02.h ends here */
