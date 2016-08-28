@@ -1,3 +1,4 @@
+#include "stack.h"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -35,3 +36,12 @@ int pop() {
 int stackempty() {
 	return head->next == z;
 }
+
+
+#ifdef TEST
+
+int main(int argc, char *argv[]) {
+	return 0;
+}
+
+#endif
