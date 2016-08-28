@@ -40,7 +40,35 @@ int stackempty() {
 
 #ifdef TEST
 
+#include <assert.h>
+
+/*
+ * Two simple tests:
+ *     - order preserved
+ *     - unable to pop more than pushed
+ */
+void test_order_preserved() {
+	stackinit();
+	push(2);
+	push(4);
+	assert(pop() == 4);
+	assert(pop() == 2);
+	printf("+");
+}
+
+void test_lower_bound() {
+	stackinit();
+	push(3);
+	assert(pop() == 3);
+	assert(pop() == 0);
+	printf("+");
+}
+
 int main(int argc, char *argv[]) {
+	printf("Testing %s\n\nTests: ", __FILE__);
+	test_order_preserved();
+	test_lower_bound();
+	printf("\n");
 	return 0;
 }
 
