@@ -6,6 +6,8 @@ struct node {
 	struct node *next;
 };
 
+struct node *head;
+
 void list_initialize();
 void delete_next(struct node *t);
 struct node *insert_after(int v, struct node *t);

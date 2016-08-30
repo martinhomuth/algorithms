@@ -1,7 +1,7 @@
 #include "linked_list.h"
 #include <stdlib.h>
 
-struct node *head, *z;
+struct node *z;
 
 void list_initialize() {
 	head = malloc(sizeof *head);
