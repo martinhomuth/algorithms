@@ -12,7 +12,7 @@ int main() {
 	item1 = insert_after(1, head);
 	item2 = insert_after(2, item1);
 	item3 = insert_after(3, item2);
-	exchange(item2, item3);
+	exchange(&item2, &item3);
 	assert(item3->next == item2);
 	assert(item1->next == item3);
 	assert(item2->next != item3);

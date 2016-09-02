@@ -33,19 +33,23 @@ void  move_next_to_front(struct node *t) {
 	head->next = ptr;
 }
 
-void exchange(struct node *t, struct node *u)
+void exchange(struct node **t, struct node **u)
 {
+	if (head->next == z ||
+	    head->next->next == z)
+		return; /* nothing to exchange */
 	struct node *ptr1 = head, *ptr2 = head, *tmp1, *tmp2;
-	while (ptr1->next != t && ptr1->next != z)
+	while (ptr1->next != *t && ptr1->next != z)
 		ptr1 = ptr1->next;
-	while (ptr2->next != u && ptr2->next != z)
+	while (ptr2->next != *u && ptr2->next != z)
 		ptr2 = ptr2->next;
-	tmp1 = ptr1;
-	tmp2 = ptr2;
-	t->next = tmp2->next->next;
-	u->next = tmp1->next->next;
-	tmp1->next = u;
-	tmp2->next = t;
+
+	tmp1 = (*t)->next;
+	tmp2 = (*u)->next;
+	*u = ptr1->next;
+	(*u)->next = tmp1;
+	*t = ptr2->next;
+	(*t)->next = tmp2;
 }
 
 
